@@ -46,7 +46,7 @@
 
 .btn.btn-primary,
 .btn.btn-secondary {
-    color: #CCBA78;
+    color: #080222;
 }
 
 .btn-square {
@@ -91,13 +91,14 @@
     color: var(--primary);
 }
 
-@media (max-width: 991.98px) {
+
+
+@media (max-width:100px) {
     .navbar-dark .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
+        padding: 10px; /* Increased padding for better touch targets */
+        font-size: 8px;
     }
 }
-
 
 /*** Header ***/
 .carousel-caption {
@@ -105,7 +106,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(15, 23, 43, .7);
+    background: rgba(0, 0, 0, 0.185);
     z-index: 1;
 }
 
@@ -124,6 +125,7 @@
     #header-carousel .carousel-item {
         position: relative;
         min-height: 450px;
+        width: 100;
     }
     
     #header-carousel .carousel-item img {
@@ -402,11 +404,11 @@
 }
 
 .team-item:hover {
-    border-color: var(--secondary) !important;
+    border-color: var(--dark) !important;
 }
 
 .team-item:hover .bg-primary {
-    background: var(--secondary) !important;
+    background: var(--dark) !important;
 }
 
 .team-item:hover .bg-primary i {
@@ -534,3 +536,307 @@
     max-width: 100%;
     height: auto;
 }
+/* Header and Logo */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column; /* Stacks logo and menu vertically */
+    justify-content: flex-start; /* Aligns content from the top */
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    background-color: #07194f;
+    padding-top: 10px; /* Extra padding on top for spacing */
+}
+
+header.scrolled {
+    background-color: #07194f6d;
+}
+
+
+
+.logo {
+    height: 60px;
+}
+
+/* Navigation Menu - Centered Below Logo */
+
+.nav-menu ul {
+    display: flex;
+    justify-content: center; /* Ensures the menu items are centered */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    margin: 0 20px; /* Space between menu items */
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+/* Active or hovered menu item in gold */
+.nav-menu ul li a.active, 
+.nav-menu ul li a:hover {
+    color:#080222;
+}
+
+/* Change color for scrolled header */
+header.scrolled .nav-menu ul li a {
+    color: white;
+}
+
+header.scrolled .nav-menu ul li a.active {
+    color:#07194f;
+}
+/* This will change the background and text color of the whole service box on hover */
+.service-item:hover {
+    background-color: #07194f;  /* Background color changes to blue on hover */
+    color: white;  /* Text color changes to white on hover */
+}
+
+/* This will change the icon color when hovering */
+.service-item:hover .service-icon i {
+    color: white;  /* Icon color changes to white on hover */
+}
+
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+/* General Body Container Styles */
+body {
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.body-container {
+    padding: 20px;
+    background-color: #f4f4f4; /* Light background color for better readability */
+}
+
+section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+h1, h2 {
+    color: #07194f; /* Darker text color for headings */
+}
+
+p {
+    color: #07194f; /* Lighter text color for paragraphs */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .body-container {
+        padding: 10px; /* Reduced padding on smaller screens */
+    }
+
+    section {
+        margin-bottom: 15px; /* Reduced margin between sections */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller font size for headings */
+    }
+
+    h2 {
+        font-size: 20px; /* Smaller font size for subheadings */
+    }
+
+    p {
+        font-size: 14px; /* Smaller font size for paragraphs */
+    }
+}
+
+
+.logo-container {
+    flex: 2px;
+    align-items: center;
+  
+    left: 200px;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto; /* Adjusts logo height proportionally */
+
+}
+
+.hamburger-container {
+    display: flex;
+    align-items: center;
+    position: absolute; /* Positioning it absolutely */
+    top: 10px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    cursor: pointer;
+}
+
+.hamburger {
+    font-size: 24px;
+    color: white;
+    margin-right: 8px;
+}
+
+.menu-text {
+    color: white;
+    font-size: 16px;
+}
+
+/* Navigation Styles */
+.nav-menu {
+    display: flex;
+    flex: 3;
+    justify-content: center;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.nav-menu .active {
+    font-weight: bold;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    #main-header {
+        height: auto; /* Allow height to adjust based on content */
+        padding-left: 50px;
+    }
+
+    .hamburger-container {
+        top: 50%; /* Align vertically center */
+        transform: translateY(-50%); /* Adjust position to be centered vertically */
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Start below the header */
+        left: 0;
+        background-color:#07194f;
+        height: auto; /* Adjust height based on content */
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+}
+
+/* Ensure full width for all containers */
+.container-fluid,
+.container-xxl {
+    width: 100vw;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply to specific sections if needed */
+#header-carousel {
+    width: 100vw;
+    overflow: hidden; /* Avoids overflow issues */
+}
+
+/* Ensures no margin or padding causing extra gaps */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Adjust image to fit container */
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+
+/* General styles for carousel and text section */
+#roomCarousel img {
+    height: 500px; /* Default height for larger screens */
+    object-fit: cover; /* Ensures images cover the container without distortion */
+}
+
+/* Adjust container */
+.container-xxl {
+    padding: 0; /* Remove default padding */
+}
+
+/* Adjust text section */
+#roomText {
+    padding: 5rem; /* Padding for larger screens */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #roomCarousel img {
+        height: 600px; /* Reduced height for smaller screens */
+    
+    
+    }
+
+    #roomText {
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    #roomCarousel img {
+        height: 500px;
+        padding-top: 30px; /* Further reduced height for very small screens */
+    }
+
+    .row {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .col-md-6 {
+        width: 100%; /* Ensure columns take full width */
+    }
+
+    #roomText {
+        text-align: center; /* Center text for small screens */
+        padding: 1rem; /* Reduce padding for very small screens */
+    }
+}
+
